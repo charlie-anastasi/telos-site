@@ -38,11 +38,13 @@ export const footer = {
 };
 
 // Forms post to Formspree, which emails each submission to charlie@teloscollege.org.
-// Set NEXT_PUBLIC_FORMSPREE_ID to the form's ID (the part after /f/ in its endpoint).
-const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+// The ID is the part after /f/ in the form's endpoint. It is public (any page
+// with a form shows it), so it lives here; NEXT_PUBLIC_FORMSPREE_ID overrides
+// it, e.g. to point a preview deployment at a test form.
+const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xljdkawo";
 
 export const forms = {
-  endpoint: formspreeId ? `https://formspree.io/f/${formspreeId}` : null,
+  endpoint: `https://formspree.io/f/${formspreeId}`,
   thanks: "Thank you!",
   subjects: {
     contact: "Telos website: contact form",

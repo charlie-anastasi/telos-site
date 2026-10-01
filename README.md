@@ -44,7 +44,7 @@ To change copy, edit the text inside `Text`, or in `src/content/` when it is sha
 
 ## Forms
 
-The contact form, the pilot early-access form (`/contact-1`) and the footer newsletter sign-up post to one [Formspree](https://formspree.io) form, which emails each submission. Set its ID in the `NEXT_PUBLIC_FORMSPREE_ID` environment variable (see `.env.example`). Each submission carries a `form` field and a subject line saying which form it came from. Until the ID is set, submitting shows an error and nothing is sent.
+The contact form, the pilot early-access form (`/contact-1`) and the footer newsletter sign-up post to one [Formspree](https://formspree.io) form, which emails each submission. Its ID is set in `src/content/site.ts`; the `NEXT_PUBLIC_FORMSPREE_ID` environment variable overrides it (see `.env.example`). Each submission carries a `form` field and a subject line saying which form it came from.
 
 ## URLs
 

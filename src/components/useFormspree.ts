@@ -11,10 +11,6 @@ export function useFormspree(form: FormName) {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!forms.endpoint) {
-      setStatus("error");
-      return;
-    }
     const data = new FormData(event.currentTarget);
     data.set("_subject", forms.subjects[form]);
     data.set("form", form);
@@ -31,7 +27,7 @@ export function useFormspree(form: FormName) {
     }
   }
 
-  return { status, onSubmit, action: forms.endpoint ?? undefined };
+  return { status, onSubmit, action: forms.endpoint };
 }
 
 export const FORM_ERROR = "Unable to send form. Please try again later.";
