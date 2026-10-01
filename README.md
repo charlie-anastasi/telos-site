@@ -52,7 +52,7 @@ Every URL from the Squarespace site still works: `/contact`, `/pilot`, `/pilot-s
 
 ## Checking the match against Squarespace
 
-The scripts in `tools/` drive the installed Chrome to capture the live site and this build, then compare them. They only work while the Squarespace site is still up.
+The scripts in `tools/` drive the installed Chrome to capture a reference site and this build, then compare them. They were used to match this site to Squarespace before the domain moved to Vercel on 2026-10-01. Since then `capture:live` captures this site itself, so it is only useful for before-and-after checks of a change: capture live, make the change locally, capture local, compare.
 
 ```bash
 npm run capture:live
